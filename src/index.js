@@ -6,8 +6,8 @@ import './styles/styles.css';
 import './index.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import registerServiceWorker from './registerServiceWorker';
-import HomePage from './HomePage';
-import RestuarantsPage from './components/RestaurantsPage';
+import HomePage from './components/home/HomePage';
+import RestuarantsPage from './components/restaurant/RestaurantsPage';
 import configureStore from './store/configureStore';
 import { loadRestaurants } from './actions/restaurantActions';
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import RestaurantList from './RestaurantList'
-import * as restaurantActions from '../actions/restaurantActions';
+import * as restaurantActions from '../../actions/restaurantActions';
 
 
 class RestuarantsPage extends React.Component {

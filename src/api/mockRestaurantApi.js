@@ -112,14 +112,14 @@ class RestaurantApi {
                     reject(`Name must be at least ${minRestaurantNameLength} characters.`);
                 }
 
-                if (restaurant._id) {
-                    const existingRestaurantIndex = restaurants.findIndex(a => a._id === restaurant._id);
+                if (restaurant._id.$oid) {
+                    const existingRestaurantIndex = restaurants.findIndex(a => a._id.$oid === restaurant._id.$oid);
                     restaurants.splice(existingRestaurantIndex, 1, restaurant);
                 } else {
                     //Just simulating creation here.
                     //The server would generate ids and watchHref's for new restaurants in a real app.
                     //Cloning so copy returned is passed by value rather than by reference.
-                    restaurant._id = generateId(restaurant);
+                    restaurant._id.$oid = generateId(restaurant);
                     restaurants.push(restaurant);
                 }
 
@@ -132,7 +132,7 @@ class RestaurantApi {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 const indexOfRestaurantToDelete = restaurants.findIndex(restaurant => {
-                    restaurant._id === restaurantId;
+                    restaurant._id.$oid === restaurantId;
                 });
                 restaurants.splice(indexOfRestaurantToDelete, 1);
                 resolve();

@@ -19,7 +19,7 @@ const RestaurantList = ({ restaurants }) => {
             <tbody>
                 {restaurants.map((restaurant) =>
                     <RestaurantListRow
-                        key={restaurant._id}
+                        key={restaurant._id.$oid}
                         restaurant={restaurant} />
                 )}
             </tbody>

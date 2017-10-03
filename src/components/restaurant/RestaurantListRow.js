@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types'
+import {Link} from 'react-router-dom';
 
 const RestaurantListRow = ({ restaurant }) => {
     return (
         <tr>
-            <td>{restaurant.name}</td>
+            <td><Link to={'/restaurants/' + restaurant._id.$oid}>{restaurant.name}</Link></td>
             <td>{restaurant.address}</td>
             <td>{restaurant.city}</td>
             <td>{restaurant.outcode}</td>

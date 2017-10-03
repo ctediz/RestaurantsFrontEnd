@@ -1,15 +1,13 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux';
 import './styles/styles.css';
-import './index.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import registerServiceWorker from './registerServiceWorker';
-import HomePage from './components/home/HomePage';
-import RestuarantsPage from './components/restaurant/RestaurantsPage';
 import configureStore from './store/configureStore';
 import { loadRestaurants } from './actions/restaurantActions';
+import App from './components/App'
 
 const store = configureStore();
 store.dispatch(loadRestaurants());
@@ -17,10 +15,7 @@ store.dispatch(loadRestaurants());
 render(
     <Provider store={store}>
         <BrowserRouter>
-            <div className="container-fluid">
-                <Route path="/" exact component={HomePage} />
-                <Route path="/restaurants" component={RestuarantsPage} />
-            </div>
+            <App />
         </BrowserRouter>
     </Provider>,
     document.getElementById('root')

@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 const RestaurantListRow = ({ restaurant }) => {
     return (
         <tr>
-            <td><Link to={'/restaurants/' + restaurant._id.$oid}>{restaurant.name}</Link></td>
+            <td><Link to={'/restaurant/' + restaurant._id.$oid}>{restaurant.name}</Link></td>
             <td>{restaurant.address}</td>
             <td>{restaurant.city}</td>
             <td>{restaurant.outcode}</td>

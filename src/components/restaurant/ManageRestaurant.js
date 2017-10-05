@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as restaurantActions from '../../actions/restaurantActions';
 
-class ManageRestaurant extends React.Component {
+export class ManageRestaurant extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
@@ -33,6 +33,7 @@ class ManageRestaurant extends React.Component {
             });
     }
 
+    // field state change
     onChange(event) {
         const field = event.target.name;
         let restaurant = Object.assign({}, this.state.restaurant);
@@ -140,7 +141,7 @@ function getRestaurantById(restaurants, id) {
 function mapStateToProps(state, ownProps) {
     const restaurantId = ownProps.match.params.id;    // from url /:id
     let restaurant = {
-        _id: '',
+        _id: {$oid:''},
         address: '',
         city: '',
         name: '',
